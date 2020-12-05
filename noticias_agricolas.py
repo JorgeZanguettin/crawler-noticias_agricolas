@@ -12,9 +12,11 @@ class WebCrawler():
 
 		url_inicial = 'https://www.noticiasagricolas.com.br/noticias/'
 
+		self.send_log_system('DEGUB', 'Start Crawler')
 		requisicao = requests.get(url_inicial)
 
 		self.parse_grid(requisicao)
+		self.send_log_system('DEGUB', 'Finish Crawler')
 
 	def send_log_system(self, type_message, message):
 		print (f'[ {type_message} ] {message}')
